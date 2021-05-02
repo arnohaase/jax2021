@@ -1,1 +1,1 @@
-# jax2021
+# Workshop Java-Standardbibliothek auf der JAX 2021
