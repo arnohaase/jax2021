@@ -2,6 +2,7 @@ package com.ajjpj.javaworkshop.collections;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -26,15 +27,16 @@ public class ListExcerciseSolution {
         }
 
         // wenn man indices zum löschen nutzen will dann rückwärts
-//        List<Integer> duplicateIndex = duplicateIndices(list);
-//        Collections.reverse(duplicateIndex);
-//        List<Integer> cleanList = new ArrayList<>(list);
-//        for (int indexToDelete : duplicateIndex) {
-//            cleanList.remove(indexToDelete);
-//        }
-//        for (int i : cleanList) {
-//            System.out.println(i);
-//        }
+        List<Integer> duplicateIndex = new ArrayList<>(duplicateIndices(list));
+        Collections.sort(duplicateIndex, Comparator.reverseOrder()); // <- rückwärts sortieren
+        List<Integer> cleanList = new ArrayList<>(list);
+        for (int indexToDelete : duplicateIndex) {
+            cleanList.remove(indexToDelete);
+        }
+        System.out.println("clean list - all that have duplicate removed");
+        for (int i : cleanList) {
+            System.out.println(i);
+        }
 
 
     }
@@ -71,8 +73,8 @@ public class ListExcerciseSolution {
     /**
      * @return Alle index an denen Duplikate vorkommen
      */
-    private static List<Integer> duplicateIndices (List<Integer> list) {
-        List<Integer> duplicateIndex = new ArrayList<>();
+    private static Set<Integer> duplicateIndices (List<Integer> list) {
+        Set<Integer> duplicateIndex = new HashSet<>();
         Map<Integer, Integer> valueToLastIndex = new HashMap<>();
         for (int index=0; index<list.size(); index++) {
             Integer value = list.get(index);
