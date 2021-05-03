@@ -10,6 +10,8 @@ public class String_Exercise1 {
     }
 
     public String firstIdentifier(String s) {
+//        Character.isJavaIdentifierStart()
+//        Character.isJavaIdentifierPart()
         return ""; //TODO
     }
 }
