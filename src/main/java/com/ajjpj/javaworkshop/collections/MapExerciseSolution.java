@@ -13,7 +13,7 @@ class TeilnehmerVerwaltungSolution {
 
     // *nie* null liefern, sondern ggf. leere Liste
     Set<String> teilnehmerFuerKurs(String kurs) {
-        return teilnehmerJeKurs.getOrDefault(kurs, Set.of());
+        return Set.copyOf(teilnehmerJeKurs.getOrDefault(kurs, Set.of()));
     }
 
     // Kurs wird ggf. automatisch angelegt
