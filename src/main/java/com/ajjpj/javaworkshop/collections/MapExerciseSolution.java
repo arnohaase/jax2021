@@ -11,7 +11,6 @@ public class MapExerciseSolution {
 class TeilnehmerVerwaltungSolution {
     private final Map<String,Set<String>> teilnehmerJeKurs = new HashMap<>();
 
-
     // *nie* null liefern, sondern ggf. leere Liste
     Set<String> teilnehmerFuerKurs(String kurs) {
         return teilnehmerJeKurs.getOrDefault(kurs, Set.of());
