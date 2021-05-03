@@ -11,7 +11,13 @@ public class StreamsUebung {
         return null; // TODO
     }
 
-    // Einen Satz in Wörter zu zerlegen und in einer Map nach der länge der Wörter Sortieren
+    /**
+     * Einen Satz in Wörter zu zerlegen und in einer Map nach der länge der Wörter Sortieren
+     *
+     * 3 -> Ich, Bin
+     * 4 -> eine
+     * 8 -> funktion
+     */
     public Map<Integer, Set<String>> sortInLength(String satz) {
         return null; // TODO
     }
