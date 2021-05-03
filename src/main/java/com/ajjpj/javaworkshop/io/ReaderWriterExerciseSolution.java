@@ -7,7 +7,7 @@ import java.nio.file.Files;
 public class ReaderWriterExerciseSolution {
 
     public static String readFileIntoString1(File f, Charset charset) throws IOException {
-        return Files.readString(f.toPath(), charset);
+        return Files.readString(f.toPath(), charset); // Es gibt dieses API schon :-)
     }
 
     public static String readFileIntoString2(File f, Charset charset) throws IOException {
