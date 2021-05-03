@@ -1,5 +1,6 @@
 package com.ajjpj.javaworkshop.memleaks;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
