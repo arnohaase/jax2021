@@ -7,6 +7,9 @@ import java.io.OutputStream;
 
 public class InputStreams {
     public static void main(String[] args) throws IOException {
+        // InputStream und OutputStream werden *beide* vom try-with-resources geschlossen!
+        // Es ist wichtig, dass bei beiden immer close() aufgerufen wird.
+
         try(InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("random_data.dat");
                 OutputStream os = new FileOutputStream("dummy.out")) {
             int b;
