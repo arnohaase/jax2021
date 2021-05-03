@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class MapExerciseSolution {
 }
@@ -16,7 +17,24 @@ class TeilnehmerVerwaltungSolution {
         return Set.copyOf(teilnehmerJeKurs.getOrDefault(kurs, Set.of()));
     }
 
-    // Kurs wird ggf. automatisch angelegt
+    Set<String> kurseFuerTeilnehmer(String teilnehmer) {
+        Set<String> result = new HashSet<>();
+        for(String kurs: teilnehmerJeKurs.keySet()) {
+            if(teilnehmerJeKurs.get(kurs).contains(teilnehmer))
+                result.add(kurs);
+        }
+
+        return Set.copyOf(result);
+    }
+
+    Set<String> kurseFuerTeilnehmer2(String teilnehmer) {
+        return teilnehmerJeKurs.keySet()
+                .stream()
+                .filter(k -> teilnehmerJeKurs.get(k).contains(teilnehmer))
+                .collect(Collectors.toSet());
+    }
+
+        // Kurs wird ggf. automatisch angelegt
     void registriereTeilnehmer(String kurs, String teilnehmer) {
         teilnehmerJeKurs.computeIfAbsent(kurs, k -> new HashSet<>())
                 .add(teilnehmer);
